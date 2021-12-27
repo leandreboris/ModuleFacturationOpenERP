@@ -38,6 +38,20 @@
 			<field name="kind">function</field>
 			<field name="action">_gestion_client_fcn()</field>
 		</record>
+
+		<record model="workflow.activity" id="project_societe_wkf_act_gestion_commande">
+			<field name="wkf_id" ref="project_societe_wkf" />
+			<field name="name">Gestion des commandes</field>
+			<field name="kind">function</field>
+			<field name="action">_gestion_commande_fcn()</field>
+		</record>
+
+		<record model="workflow.activity" id="project_societe_wkf_act_gestion_facturation">
+			<field name="wkf_id" ref="project_societe_wkf" />
+			<field name="name">Gestion des facturations</field>
+			<field name="kind">function</field>
+			<field name="action">_gestion_facturation_fcn()</field>
+		</record>
 <!-- 
 		<record model="workflow.activity" id="ptr_inventaire_wkf_act_signature_courrier">
 			<field name="wkf_id" ref="ptr_inv_wkf" />
