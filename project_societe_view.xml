@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_societe" name="Mini-Projet 2"/> 
+		 <record id="project_societe_form_view" model="ir.ui.view">
+            <field name="name">project.societe.form</field>
+            <field name="model">project.societe</field>
+            <field name="arch" type="xml">
+                <form string="Societe" version="7.0">
+                    <header>
+                            <field name="state" widget='statusbar' statusbar_visible='' />  
+                            <button name='repertorier_societe' string='Informations de société' states='start' type="workflow" class="oe_highlight"/>
+                            <button name='gestion_societe' string='Gestion de société' states='gestion_de_societe' type="workflow" class="oe_highlight"/>
+                            <button name='gestion_article' string="Gestion d'articles" states='gestion_de_societe' type="workflow" class="oe_highlight"/>
+
+					</header>
+                    <sheet>
+						<notebook >
+							<page string="Données sur la société">
+								<group>
+									<field name="nom"/>
+									<field name="adresse"/>
+									<field name="telephone"/>
+									<field name="email"/>
+									<field name="devise"/>
+									<field name="site_web"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project.societe_tree">
+            <field name="name">project.societe.tree</field>
+            <field name="model">project.societe</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Informations sur la société">
+                    <field name="nom"/>
+                    <field name="adresse"/>
+                    <field name="telephone"/>
+                    <field name="email"/>
+                    <field name="devise"/>
+                    <field name="site_web"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_societe_seq">
+            <field name="name">Société</field>
+            <field name="res_model">project.societe</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+       <menuitem name="Mini-projet 2" id="section_main_menu_societe" parent="main_menu_societe" sequence="1"/>
+        <menuitem name="Données sur la société" id="real_menu_societe" parent="section_main_menu_societe" action="action_societe_seq" sequence="1"/>
+		
+    </data>
+</openerp>

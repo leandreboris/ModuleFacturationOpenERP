@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_societe" name="Mini-Projet 2"/> 
+
+		 <record id="project_client_form_view" model="ir.ui.view">
+            <field name="name">project.client.form</field>
+            <field name="model">project.client</field>
+            <field name="arch" type="xml">
+                <form string="Client" version="7.0">
+					<sheet>
+						<notebook >
+							<page string="Informations client">
+								<group>
+									<field name="numclient"/>
+									<field name="nomclient"/>
+									<field name="adresseclient"/>
+									<field name="telclient"/>
+                                    <field name="photo"/>
+								</group>
+							</page>
+
+							
+
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="project.client_tree">
+            <field name="name">project.client.tree</field>
+            <field name="model">project.client</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Infos contrat">
+                    <field name="numclient"/>
+					<field name="nomclient"/>
+					<field name="adresseclient"/>
+					<field name="telclient"/>
+                    <field name="photo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_client_seq">
+            <field name="name">Gestion de clients</field>
+            <field name="res_model">project.client</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+       <menuitem name="Mini-projet 2" id="section_main_menu_societe" parent="main_menu_societe" sequence="1"/>
+        <menuitem name="Gestion des clients" id="real_menu_client" parent="section_main_menu_societe" action="action_client_seq" sequence="2"/>
+		
+    </data>
+</openerp>

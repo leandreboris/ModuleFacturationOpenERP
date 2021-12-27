@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_societe" name="Mini-Projet 2"/> 
+
+		 <record id="project_article_form_view" model="ir.ui.view">
+            <field name="name">project.article.form</field>
+            <field name="model">project.article</field>
+            <field name="arch" type="xml">
+                <form string="Article" version="7.0">
+					<sheet>
+						<notebook >
+							<page string="Informations Produit">
+								<group>
+									<field name="categorie"/>
+									<field name="nom"/>
+                                    <field name="photo"/>
+                                    <field name="prix"/>
+                                    <field name="description"/>
+                                    <field name="achetes"/>
+								</group>
+							</page>
+
+
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="project.article_tree">
+            <field name="name">project.article.tree</field>
+            <field name="model">project.article</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Informations Article">
+                    <field name="categorie"/>
+                        <field name="nom"/>
+                        <field name="photo"/>
+                        <field name="prix"/>
+                        <field name="description"/>
+                        <field name="achetes"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_article_seq">
+            <field name="name">Gestion des articles</field>
+            <field name="res_model">project.article</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+        <menuitem name="Mini-projet 2" id="section_main_menu_societe" parent="main_menu_societe" sequence="1" />
+        <menuitem name="Gestion des articles" id="real_menu_article" parent="section_main_menu_societe" action="action_article_seq" sequence="3"/>
+		
+    </data>
+</openerp>

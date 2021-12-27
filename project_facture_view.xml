@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_societe" name="Mini-Projet 2"/> 
+		 <record id="project_facture_form_view" model="ir.ui.view">
+            <field name="name">project.facture.form</field>
+            <field name="model">project.facture</field>
+            <field name="arch" type="xml">
+                <form string="Facture" version="7.0">
+	
+					<sheet>
+						<notebook >
+							<page string="Informations facture">
+								<group>
+									<field name="numfac"/>
+                                    <field name="logo"/>
+									<field name="datefac"/>
+                                    <field name="datepaiement"/>
+                                    <field name="total_ht"/>
+								</group>
+							</page>
+<!-- 
+							<page string="Contrat">
+								<group>
+									<field name="idcontratFacture"/>
+								</group>
+							</page>
+                             -->
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="project.facture_tree">
+            <field name="name">project.facture.tree</field>
+            <field name="model">project.facture</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Infos facture">
+                    <field name="numfac"/>
+                    <field name="logo"/>
+					<field name="datefac"/>
+					<field name="datepaiement"/>
+                    <field name="total_ht"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_facture_seq">
+            <field name="name">Gestion de factures</field>
+            <field name="res_model">project.facture</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+       <menuitem name="Mini-projet 2" id="section_main_menu_societe" parent="main_menu_societe" sequence="1"/>
+        <menuitem name="Facturation" id="real_menu_facture" parent="section_main_menu_societe" action="action_facture_seq" sequence="5"/>
+		
+    </data>
+</openerp>
