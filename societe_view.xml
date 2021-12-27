@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <menuitem id="main_menu_societe" name="Societe"/>
+  
+      <record id ="fgl_societe_form_view" model="ir.ui.view">
+          <!-- Ici, les divers champs de la vue Societe -->
+          <field name="name">fgl.societe.form</field>
+          <field name="model">fgl.societe</field>
+
+
+            <field name="arch" type="xml">
+
+            <form string="Societe" version="7.0">
+
+              <sheet>
+                <notebook>
+                  <page string="Informations sur la societe">
+                    <group>
+                      <field name="nom"/>
+                      <field name="adresse"/>
+                      <field name="telephone"/>
+                      <field name="email"/>
+                      <field name="devise"/>
+                      <field name="site_web"/>
+                    </group>
+                  </page>
+                </notebook>
+              </sheet>
+
+            </form>
+
+
+          </field>
+
+      </record>
+
+
+      <record model="ir.ui.view" id="fgl_societe_tree">
+            <field name="name">fgl.societe.tree</field>
+            <field name="model">fgl.societe</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Informations societes">
+                    <field name="nom"/>
+                    <field name="adresse"/>
+                    <field name="telephone"/>
+                    <field name="email"/>
+                    <field name="devise"/>
+                    <field name="site_web"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_societe_seq">
+            <field name="name">action societe</field>
+            <field name="res_model">fgl.societe</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+
+  </data>
+</openerp>
