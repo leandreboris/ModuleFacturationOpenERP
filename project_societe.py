@@ -5,10 +5,6 @@ from openerp.osv import osv,fields
 
 class project_societe(osv.osv):
 
-    def _start_fcn(self,cr,uid,ids,context=None):
-        self.write(cr,uid,ids,{'state':'start'})
-        return True
-
     def _gestion_societe_fcn(self,cr,uid,ids,context=None):
         self.write(cr,uid,ids,{'state':'gestion_societe'})
         return True
@@ -39,12 +35,11 @@ class project_societe(osv.osv):
         'devise' : fields.selection((('EUR','Euros'), ('DHs','Dirhams')), 'Devise'),
         'site_web' : fields.text('Site web'),
         'state':fields.selection([
-											('start','Brouillon'),
                                             ('gestion_societe','Gestion de société'),
                                             ('gestion_article',"Gestion d'articles"),
                                             ('gestion_client','Gestion de clients'),
-                                            ('gestion_client','Gestion de commandes'),
-                                            ('gestion_client','Gestion des facturations'),
+                                            ('gestion_commande','Gestion de commandes'),
+                                            ('gestion_facturation','Gestion des facturations'),
 											],'State',readonly=True),
     }
 project_societe()

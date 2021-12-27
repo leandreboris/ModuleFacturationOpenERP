@@ -17,6 +17,7 @@
         'project_societe_view.xml',
         'project_client_view.xml',
         'project_article_view.xml',
+        'project_article_wkf.xml',
         'project_facture_view.xml',
         'project_commande_view.xml',
         'project_societe_wkf.xml',

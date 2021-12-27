@@ -9,7 +9,6 @@
                 <form string="Societe" version="7.0">
                     <header>
                             <field name="state" widget='statusbar' statusbar_visible='' />  
-                            <button name='repertorier_societe' string='Informations de société' states='start' type="workflow" class="oe_highlight"/>
                             <button name='gestion_societe' string='Gestion de société' states='gestion_societe' type="workflow" class="oe_highlight"/>
                             <button name='gestion_article' string="Gestion d'articles" states='gestion_article' type="workflow" class="oe_highlight"/>
                             <button name='gestion_client' string="Gestion de clients" states='gestion_client' type="workflow" class="oe_highlight"/>

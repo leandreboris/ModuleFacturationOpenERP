@@ -2,20 +2,13 @@
     <data>
 		<!-- Definitions -->
 		<record model="workflow" id="project_societe_wkf">
-			<field name="name">project.societe.wkf</field>
-			<field name="osv">project.societe</field>
+			<field name="name">project.article.wkf</field>
+			<field name="osv">project.article</field>
 			<field name="on_create">True</field>
 		</record>
 		
 		<!-- Activities-->
-		
-
-		<record model="workflow.activity" id="project_societe_wkf_act_gestion_societe">
-			<field name="wkf_id" ref="project_societe_wkf" />
-			<field name="name">Gestion de societe</field>
-			<field name="kind">function</field>
-			<field name="action">_gestion_societe_fcn()</field>
-		</record>
+	
 
 		<record model="workflow.activity" id="project_societe_wkf_act_gestion_article">
 			<field name="wkf_id" ref="project_societe_wkf" />
@@ -49,34 +42,28 @@
 
 
 		<!-- Transitions-->
+	
+		
+
 		<record model="workflow.transition" id="project_societe_wkf_tr1">
-			<field name="act_from" ref="project_societe_wkf_act_gestion_societe" />
-			<field name="act_to" ref="project_societe_wkf_act_gestion_article" />
-			<field name="signal">gestion_societe</field>
-		</record>
-
-
-		<record model="workflow.transition" id="project_societe_wkf_tr2">
 			<field name="act_from" ref="project_societe_wkf_act_gestion_article" />
 			<field name="act_to" ref="project_societe_wkf_act_gestion_client" />
-			<field name="signal">gestion_article</field>
-		</record>
-
-		<record model="workflow.transition" id="project_societe_wkf_tr3">
-			<field name="act_from" ref="project_societe_wkf_act_gestion_client" />
-			<field name="act_to" ref="project_societe_wkf_act_gestion_commande" />
 			<field name="signal">gestion_client</field>
 		</record>
 
-		<record model="workflow.transition" id="project_societe_wkf_tr4">
-			<field name="act_from" ref="project_societe_wkf_act_gestion_commande" />
-			<field name="act_to" ref="project_societe_wkf_act_gestion_facturation" />
-			<field name="flow_stop">True</field>
+		<record model="workflow.transition" id="project_societe_wkf_tr2">
+			<field name="act_from" ref="project_societe_wkf_act_gestion_client" />
+			<field name="act_to" ref="project_societe_wkf_act_gestion_commande" />
 			<field name="signal">gestion_commande</field>
 		</record>
 
 
-	
+		<record model="workflow.transition" id="project_societe_wkf_tr3">
+			<field name="act_from" ref="project_societe_wkf_act_gestion_commande" />
+			<field name="act_to" ref="project_societe_wkf_act_gestion_facturation" />
+			<field name="flow_stop">True</field>
+			<field name="signal">gestion_facturation</field>
+		</record>
 
 	 	
 		

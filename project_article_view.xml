@@ -8,6 +8,15 @@
             <field name="model">project.article</field>
             <field name="arch" type="xml">
                 <form string="Article" version="7.0">
+
+                    <header>
+                            <field name="state" widget='statusbar' statusbar_visible='' />  
+                            <button name='gestion_article' string="Gestion d'articles" states='gestion_article' type="workflow" class="oe_highlight"/>
+                            <button name='gestion_client' string="Gestion de clients" states='gestion_client' type="workflow" class="oe_highlight"/>
+                            <button name='gestion_commande' string="Gestion de commandes" states='gestion_commande' type="workflow" class="oe_highlight"/>
+                            <button name='gestion_facturation' string="Gestion des facturations" states='gestion_facturation' type="workflow" class="oe_highlight"/>
+
+					</header>
 					<sheet>
 						<notebook >
 							<page string="Informations Produit">
