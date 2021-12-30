@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_company" name="Mini-Projet 2 [WAKINGO]"/> 
+		 <record id="facturation_gestion_en_ligne_article_form_view" model="ir.ui.view">
+            <field name="name">facturation_gestion_en_ligne.article.form</field>
+            <field name="model">facturation_gestion_en_ligne.article</field>
+            <field name="arch" type="xml">
+                <form string="Article" version="7.0">
+					<sheet>
+						<notebook >
+							
+							<page string="Informations générales">
+								<group>
+									<field name="codeArticle"/>
+									<field name="libelleArticle"/>
+									<field name="stock"/>
+									<field name="utilisation"/>
+									<field name="prixAchat"/>
+									<field name="prixVente"/>
+									<field name="typeArticle"/>
+									<field name="tva"/>
+									<field name="idmarque"/>
+									<field name="idcategorie"/>
+									<field name="idfamille"/>
+									<field name="image"/>
+								</group>
+							</page>
+							<page string="Tarifs fournisseurs">
+								<group>
+									<field name="reference"/>
+									<field name="prixAchatfournisseur"/>
+									<field name="devise"/>
+									<field name="type"/>
+									<field name="remise"/>
+								</group>
+							</page>
+							<page string="Tarifs clients">
+							    <group>
+								    <field name="tarifDefaut"/>
+								    <field name="calcul"/>
+								    <field name="calculefamilleArticle"/>
+								    <field name="prixVenteClient"/>
+								</group>
+							</page>
+							<page string="Informations complémentaires">
+							    <group>
+								    <field name="image"/>
+								    <field name="description"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="facturation_gestion_en_ligne_article_kanban">
+            <field name="name">facturation_gestion_en_ligne.article.kanban</field>
+            <field name="model">facturation_gestion_en_ligne.article</field>
+            <field name="arch" type="xml">
+                <kanban>
+				   <templates>
+                       <t t-name="kanban-box">
+                       <div class="oe_gsco_vignette id_div">
+                           <div class="oe_gsco_image" >
+                              <a type="open">
+                              <img t-att-src="kanban_image('facturation_gestion_en_ligne.article', 'image', record.id.value)" class="oe_gsco_picture"/>
+                              </a>
+                           </div>
+                           <div class="oe_gsco_details">
+                             <a type="open">
+                                <field name="libelleArticle"/><br/>
+                                <h4><field name="codeArticle"/></h4>
+                             </a>
+                           </div>
+                         </div>
+</t>
+</templates>
+				</kanban>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_article_seq">
+            <field name="name">article</field>
+            <field name="res_model">facturation_gestion_en_ligne.article</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+   
+       <menuitem name="Categorie" id="section_main_menu_categorie" parent="main_menu_company" />
+        <menuitem name="Article" id="real_menu_article" parent="section_main_menu_categorie" action="action_article_seq"/>
+		
+    </data>
+</openerp>

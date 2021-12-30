@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_company" name="Mini-Projet 2 [WAKINGO]"/> 
+		 <record id="facturation_gestion_en_ligne_client_form_view" model="ir.ui.view">
+            <field name="name">facturation_gestion_en_ligne.client.form</field>
+            <field name="model">facturation_gestion_en_ligne.client</field>
+            <field name="arch" type="xml">
+                <form string="Client" version="7.0">
+					<sheet>
+						<notebook >
+							<page string="Informations générales">
+								<group>
+									<field name="codeClient"/>
+									<field name="typeClient"/>
+									<field name="nomEntreprise"/>
+									<field name="ice"/>
+									<field name="tel"/>
+									<field name="mobile"/>
+									<field name="email"/>
+									<field name="siteInternet"/>
+									<field name="adrersseFacturation"/>
+									<field name="codePostalFacturation"/>
+									<field name="villeFacturation"/>
+									<field name="paysFacturation"/>
+									<field name="adrersseLivraison"/>
+									<field name="codePostalLivraison"/>
+									<field name="villeLivraison"/>
+									<field name="paysLivraison"/>
+								</group>
+							</page>
+							<page string="Informations complémentaires">
+								<group>
+									<field name="commercial"/>
+									<field name="familleClient"/>
+									<field name="devise"/>
+									<field name="soldeInitial"/>
+									<field name="modeLivraison"/>
+									<field name="encoursAutorise"/>
+									<field name="grilleTarif"/>
+									<field name="echancierPaiment"/>
+									<field name="modePaiment"/>
+								</group>
+							</page>
+							<page string="Contacts">
+							    <group>
+								    <field name="nomContact"/>
+								    <field name="fonctionContact"/>
+								    <field name="emailContact"/>
+								    <field name="mobileContact"/>
+								    <field name="telContact"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="facturation_gestion_en_ligne_client_tree">
+            <field name="name">facturation_gestion_en_ligne.client.tree</field>
+            <field name="model">facturation_gestion_en_ligne.client</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Infos contrat">
+                    <field name="codeClient"/>
+									<field name="typeClient"/>
+									<field name="nomEntreprise"/>
+									<field name="ice"/>
+									<field name="tel"/>
+									<field name="mobile"/>
+									<field name="email"/>
+									<field name="siteInternet"/>
+									<field name="adrersseFacturation"/>
+									<field name="codePostalFacturation"/>
+									<field name="villeFacturation"/>
+									<field name="paysFacturation"/>
+									<field name="adrersseLivraison"/>
+									<field name="codePostalLivraison"/>
+									<field name="villeLivraison"/>
+									<field name="paysLivraison"/>
+									
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_client_seq">
+            <field name="name">client</field>
+            <field name="res_model">facturation_gestion_en_ligne.client</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+       <menuitem name="Contacts" id="section_main_menu_facture" parent="main_menu_company" />
+        <menuitem name="Client" id="real_menu_client" parent="section_main_menu_company" action="action_client_seq"/>
+		
+    </data>
+</openerp>

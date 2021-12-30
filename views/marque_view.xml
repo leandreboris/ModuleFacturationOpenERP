@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_company" name="Mini-Projet 2 [WAKINGO]"/> 
+		 <record id="facturation_gestion_en_ligne_marque_form_view" model="ir.ui.view">
+            <field name="name">facturation_gestion_en_ligne.marque.form</field>
+            <field name="model">facturation_gestion_en_ligne.marque</field>
+            <field name="arch" type="xml">
+                <form string="Marque" version="7.0">
+					<sheet>
+						<notebook >
+							<page string="Informations générales">
+								<group>
+									<field name="libelle"/>
+								</group>
+							</page>
+							
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="facturation_gestion_en_ligne_marque_tree">
+            <field name="name">facturation_gestion_en_ligne.marque.tree</field>
+            <field name="model">facturation_gestion_en_ligne.marque</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Infos marque">
+									<field name="libelle"/>
+									
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_marque_seq">
+            <field name="name">marque</field>
+            <field name="res_model">facturation_gestion_en_ligne.marque</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+       <menuitem name="Categorie" id="section_main_menu_categorie" parent="main_menu_company" />
+        <menuitem name="Marque" id="real_menu_marque" parent="section_main_menu_categorie" action="action_marque_seq"/>
+		
+    </data>
+</openerp>

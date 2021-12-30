@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_company" name="Mini-Projet 2 [WAKINGO]"/> 
+		 <record id="facturation_gestion_en_ligne_fournisseur_form_view" model="ir.ui.view">
+            <field name="name">facturation_gestion_en_ligne.fournisseur.form</field>
+            <field name="model">facturation_gestion_en_ligne.fournisseur</field>
+            <field name="arch" type="xml">
+                <form string="Fournisseur" version="7.0">
+					<sheet>
+						<notebook >
+							<page string="Informations générales">
+								<group>
+									<field name="codeFournisseur"/>
+									<field name="typeFournisseur"/>
+									<field name="nomEntreprise"/>
+									<field name="ice"/>
+									<field name="tel"/>
+									<field name="mobile"/>
+									<field name="adrersse"/>
+									<field name="codePostal"/>
+									<field name="ville"/>
+									<field name="pays"/>
+									<field name="email"/>
+									<field name="siteInternet"/>
+								</group>
+							</page>
+							<page string="Informations complémentaires">
+								<group>
+									<field name="famillefournisseur"/>
+									<field name="devise"/>
+									<field name="soldeInitial"/>
+									<field name="adressReception"/>
+									<field name="delaiLivraison"/>
+									<field name="creditAccorde"/>
+									<field name="echancierPaiment"/>
+									<field name="modePaiment"/>
+									<field name="modeLivraison"/>
+								</group>
+							</page>
+							<page string="Contacts">
+							    <group>
+								    <field name="nomContact"/>
+								    <field name="fonctionContact"/>
+								    <field name="emailContact"/>
+								    <field name="mobileContact"/>
+								    <field name="telContact"/>
+								</group>
+							</page>
+							<page string="Coordonnées bancaires">
+							    <group>
+								    <field name="nomBanque"/>
+								    <field name="numCompte"/>
+								    <field name="codeswift"/>
+								    <field name="pays"/>
+								    <field name="telBanque"/>
+								    <field name="emailBanque"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="facturation_gestion_en_ligne_fournisseur_tree">
+            <field name="name">facturation_gestion_en_ligne.fournisseur.tree</field>
+            <field name="model">facturation_gestion_en_ligne.fournisseur</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Infos fournisseur">
+                    <field name="codeFournisseur"/>
+									<field name="famillefournisseur"/>
+									<field name="devise"/>
+									<field name="soldeInitial"/>
+									<field name="adressReception"/>
+									<field name="delaiLivraison"/>
+									<field name="creditAccorde"/>
+									<field name="echancierPaiment"/>
+									<field name="modePaiment"/>
+									<field name="modeLivraison"/>
+									
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_fournisseur_seq">
+            <field name="name">fournisseur</field>
+            <field name="res_model">facturation_gestion_en_ligne.fournisseur</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+       <menuitem name="Contacts" id="section_main_menu_company" parent="main_menu_company" />
+        <menuitem name="Fournisseurs" id="real_menu_fournisseur" parent="section_main_menu_company" action="action_fournisseur_seq"/>
+		
+    </data>
+</openerp>

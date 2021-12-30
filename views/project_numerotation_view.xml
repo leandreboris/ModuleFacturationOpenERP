@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record id="project_numerotation_form_view" model="ir.ui.view">
+            <field name="name">project.numerotation.form</field>
+            <field name="model">project.numerotation</field>
+            <field name="arch" type="xml">
+                <form string="Compagnie" version="7.0">
+                    <sheet>
+						<notebook >
+							<page string="Codes de base">
+                                <group>
+                                	<field name="client" /> 
+                                    <field name="fournisseur"/> 
+                                    <field name="commerciaux"/> 
+                                    <field name="article"/> 
+                                    <field name="famille_articles"/> 
+                                    <field name="projet"/>
+                                    <field name="depot"/>
+                                    <field name="ordre_production"/>
+                                    <field name="bon_entree"/>
+                                    <field name="bon_sortie"/>
+                                    <field name="stock"/>
+								</group>
+							</page>
+
+                            <page string="Codes de documents de client">
+                                <group>
+                                	<field name="commande" /> 
+                                    <field name="devis"/> 
+                                    <field name="bon_livraison"/> 
+                                    <field name="facture_vente"/> 
+                                    <field name="avoir"/> 
+                                    <field name="reglement"/>
+								</group>
+							</page>
+
+                            <page string="Codes de documents de fournisseur">
+                                <group>
+                                	<field name="commande_fournisseur" /> 
+                                    <field name="devis_fournisseur"/> 
+                                    <field name="bon_reception"/> 
+                                    <field name="facture_achat"/> 
+                                    <field name="avoir_fournisseur"/> 
+                                    <field name="reglement_fournisseur"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_numerotation_tree">
+            <field name="name">project.numerotation.tree</field>
+            <field name="model">project.numerotation</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Codes de base">
+                    <field name="client" /> 
+                    <field name="fournisseur"/> 
+                    <field name="commerciaux"/> 
+                    <field name="article"/> 
+                    <field name="famille_articles"/> 
+                    <field name="projet"/>
+                    <field name="depot"/>
+                    <field name="ordre_production"/>
+                    <field name="bon_entree"/>
+                    <field name="bon_sortie"/>
+                    <field name="stock"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_numerotation_seq">
+            <field name="name">Numérotations</field>
+            <field name="res_model">project.numerotation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+        <menuitem name="Numérotations" id="section_main_menu_numerotation" parent="main_menu_company" />
+        <menuitem name="Numérotations" id="real_menu_numerotation" parent="section_main_menu_numerotation" action="action_numerotation_seq" sequence="1"/>
+		
+    </data>
+</openerp>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_company" name="Mini-Projet 2 [WAKINGO]"/> 
+		 <record id="facturation_gestion_en_ligne_categorie_article_form_view" model="ir.ui.view">
+            <field name="name">facturation_gestion_en_ligne.categorie_article.form</field>
+            <field name="model">facturation_gestion_en_ligne.categorie_article</field>
+            <field name="arch" type="xml">
+                <form string="Categorie" version="7.0">
+					<sheet>
+						<notebook >
+							<page string="Informations générales">
+								<group>
+									<field name="libelle"/>
+									<field name="description"/>
+								</group>
+							</page>
+							
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="facturation_gestion_en_ligne_categorie_article_tree">
+            <field name="name">facturation_gestion_en_ligne.categorie_article.tree</field>
+            <field name="model">facturation_gestion_en_ligne.categorie_article</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Infos categorie_article">
+									<field name="libelle"/>
+									<field name="description"/>
+									
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_categorie_article_seq">
+            <field name="name">categorie_article</field>
+            <field name="res_model">facturation_gestion_en_ligne.categorie_article</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+       <menuitem name="Categorie" id="section_main_menu_categorie" parent="main_menu_company" />
+        <menuitem name="categorie articles" id="real_menu_categorie" parent="section_main_menu_categorie" action="action_categorie_article_seq"/>
+		
+    </data>
+</openerp>
