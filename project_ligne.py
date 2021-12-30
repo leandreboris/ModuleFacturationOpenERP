@@ -8,7 +8,7 @@ class project_ligne(osv.osv):
 
         #Informations piece
         'article': fields.char('Nom *', size=128, required=True),
-        'quantite': fields.binary('Numéro de facture', size=64),
+        'quantite': fields.char('Numéro de facture', size=64),
         'unite': fields.char('Adresse *', required=True),
 			}
 

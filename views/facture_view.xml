@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <menuitem id="main_menu_company" name="Mini-Projet 2 [WAKINGO]"/> 
+		 <record id="project_facture_form_view" model="ir.ui.view">
+            <field name="name">project.facture.form</field>
+            <field name="model">project.facture</field>
+            <field name="arch" type="xml">
+                <form string="Compagnie" version="7.0"> 
+                    <sheet>
+						<notebook >
+							<page string="Facturation">
+                                <group>
+                                	<field name="client"/> 
+                                    <field name="numero"/> 
+                                    <field name="date_de_facture"/> 
+                                    <field name="projet"/> 
+                                    <field name="remise_globale"/> 
+                                    <field name="devise"/>
+                                    <field name="mode_paiement"/>
+                                    <field name="lignes"/>
+								</group>
+                                <p>Les champ marqués (*) sont obligatoires</p>
+							</page>
+
+                            
+
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_facture_tree">
+            <field name="name">project.facture.tree</field>
+            <field name="model">project.facture</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Factures">
+                    <field name="client"/> 
+                    <field name="numero"/> 
+                    <field name="date_de_facture"/> 
+                    <field name="projet"/> 
+                    <field name="remise_globale"/> 
+                    <field name="devise"/>
+                    <field name="mode_paiement"/>
+                    <field name="lignes"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_facture_seq">
+            <field name="name">Facture</field>
+            <field name="res_model">project.facture</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+   
+        <menuitem name="Facture" id="section_main_menu_company" parent="main_menu_company" sequence="1"/>
+        <menuitem name="Facturation" id="real_menu_facture" parent="section_main_menu_company" action="action_facture_seq" sequence="1"/>
+		
+    </data>
+</openerp>

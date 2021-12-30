@@ -6,6 +6,7 @@ class project_company(osv.osv):
 
     _name='project.company'
     _columns={
+
         'name': fields.char('Nom *', size=128, required=True),
         'logo': fields.binary('Importer votre Logo', size=64),
         'adresse': fields.char('Adresse *', required=True),
@@ -18,7 +19,7 @@ class project_company(osv.osv):
         'email': fields.char('Email *', required=True),
         'site_web': fields.char('Site web'),
         
-        'forme_juridique': fields.char('Capital', size=128),
+        'forme_juridique': fields.char('Forme juridique', size=128),
         'capital': fields.char('Capital', size=128),
         'numrc': fields.char('Numéro RC', size=64),
         'numif': fields.char('Numéro IF'),

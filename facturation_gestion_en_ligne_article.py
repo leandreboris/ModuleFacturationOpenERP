@@ -26,18 +26,16 @@ class facturation_gestion_en_ligne_article(osv.osv):
         'typeArticle':fields.selection((
                                        ('test','Test'),
                                        ('test','Test'),
-                                      ),'Type article',require=True),
+                                      ),'Type article *',required=True),
 		'tva':fields.selection((
                                        ('test','Test'),
                                        ('test','Test'),
-                                      ),'TVA',require=True),
-		'devise':fields.selection((
-                                       ('test','Test'),
-                                       ('test','Test'),
-                                      ),'Devise',require=True),
+                                      ),'TVA',required=True),
+		    'devise': fields.one2many('project.company','devise_id','Devise utilisée'),
+
         'type':fields.selection((
                                        ('test','Test'),
                                        ('test','Test'),
-                                      ),'Type',require=True),
+                                      ),'Type',required=True),
         }
 facturation_gestion_en_ligne_article()
