@@ -14,6 +14,7 @@
 									<field name="libelle"/>
 									<field name="description"/>
 								</group>
+                                <p>Les champ marqués (*) sont obligatoires</p>
 							</page>
 							
 						</notebook>
@@ -34,7 +35,7 @@
             </field>
         </record>
         <record model="ir.actions.act_window" id="action_categorie_article_seq">
-            <field name="name">categorie_article</field>
+            <field name="name">Catégorie d'articles</field>
             <field name="res_model">facturation_gestion_en_ligne.categorie_article</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -42,7 +43,7 @@
 
    
        <menuitem name="Categorie" id="section_main_menu_categorie" parent="main_menu_company" />
-        <menuitem name="categorie articles" id="real_menu_categorie" parent="section_main_menu_categorie" action="action_categorie_article_seq"/>
+        <menuitem name="Categorie d'articles" id="real_menu_categorie" parent="section_main_menu_categorie" action="action_categorie_article_seq"/>
 		
     </data>
 </openerp>

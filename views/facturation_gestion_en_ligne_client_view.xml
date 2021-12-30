@@ -63,27 +63,17 @@
             <field name="arch" type="xml">
                 <tree string="Infos contrat">
                     <field name="codeClient"/>
-									<field name="typeClient"/>
-									<field name="nomEntreprise"/>
-									<field name="ice"/>
-									<field name="tel"/>
-									<field name="mobile"/>
-									<field name="email"/>
-									<field name="siteInternet"/>
-									<field name="adrersseFacturation"/>
-									<field name="codePostalFacturation"/>
-									<field name="villeFacturation"/>
-									<field name="paysFacturation"/>
-									<field name="adrersseLivraison"/>
-									<field name="codePostalLivraison"/>
-									<field name="villeLivraison"/>
-									<field name="paysLivraison"/>
-									
+					<field name="typeClient"/>
+					<field name="nomEntreprise"/>
+					<field name="ice"/>
+					<field name="tel"/>
+					<field name="mobile"/>
+					<field name="email"/>				
                 </tree>
             </field>
         </record>
         <record model="ir.actions.act_window" id="action_client_seq">
-            <field name="name">client</field>
+            <field name="name">Client</field>
             <field name="res_model">facturation_gestion_en_ligne.client</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>

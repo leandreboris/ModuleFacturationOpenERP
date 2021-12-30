@@ -47,8 +47,8 @@ class facturation_gestion_en_ligne_fournisseur(osv.osv):
                                        ('test','Test'),
                                       ),'Echéancier de payement',require=True),
 		'modePaiment':fields.selection((
-                                       ('test','Test'),
-                                       ('test','Test'),
+                                       ('cash','Cash'),
+                                       ('carte','Carye'),
                                       ),'Mode de paiment préféré',require=True),
 		'modeLivraison':fields.selection((
                                        ('test','Test'),

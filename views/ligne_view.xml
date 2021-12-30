@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		 <record id="project_unite_form_view" model="ir.ui.view">
+            <field name="name">project.ligne.form</field>
+            <field name="model"><project class="ligne"></project></field>
+            <field name="arch" type="xml">
+                <form string="Ligne" version="7.0"> 
+                    <sheet>
+						<notebook >
+							<page string="Données générales sur la ligne">
+                                <group>
+                                    <field name="article"/>      
+                                	<field name="quantite"/> 
+                                    <field name="unite"/> 
+								</group>
+                                <p>Les champ marqués (*) sont obligatoires</p>
+							</page>
+
+
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_facture_tree">
+            <field name="name">project.ligne.tree</field>
+            <field name="model">project.ligne</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Informations sur la facture">
+                    <field name="article"/>      
+                                	<field name="quantite"/> 
+                                    <field name="unite"/> 
+                </tree>
+            </field>
+        </record>
+
+        
+    </data>
+</openerp>

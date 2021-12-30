@@ -4,14 +4,14 @@ import openerp
 class facturation_gestion_en_ligne_client(osv.osv):
   _name='facturation_gestion_en_ligne.client'
   _columns={
-        'codeClient': fields.char('Code du client', size=128),
-        'nomEntreprise': fields.char('Nom entreprise', size=128),
-        'typeClient': fields.char('Type de client', size=128),
+    'codeClient': fields.char('Code du client', size=128),
+    'nomEntreprise': fields.char('Nom entreprise', size=128),
+    'typeClient': fields.char('Type de client', size=128),
 		'ice':fields.char('ICE', size=128),
 		'tel':fields.integer('Téléphone'),
 		'mobile':fields.integer('Mobile'),
-		'email':fields.char('E-mail', size=128),
-		'siteInternet':fields.char('site Internet', size=128),
+		'email':fields.char('E-mail *', size=128, required = True),
+		'siteInternet':fields.char('Site Internet', size=128),
 		'adrersseFacturation':fields.char('Adresse de facturation', size=128),
 		'adrersseLivraison':fields.char('Adresse de livraison', size=128),
 		'codePostalFacturation':fields.integer('Code postal'),

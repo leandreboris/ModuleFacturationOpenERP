@@ -23,8 +23,8 @@
 									<field name="idmarque"/>
 									<field name="idcategorie"/>
 									<field name="idfamille"/>
-									<field name="image"/>
 								</group>
+								<p>Les champ marqués (*) sont obligatoires</p>
 							</page>
 							<page string="Tarifs fournisseurs">
 								<group>
@@ -34,6 +34,7 @@
 									<field name="type"/>
 									<field name="remise"/>
 								</group>
+								<p>Les champ marqués (*) sont obligatoires</p>
 							</page>
 							<page string="Tarifs clients">
 							    <group>
@@ -54,6 +55,30 @@
 				</form>
             </field>
         </record>
+
+
+
+		<record id="ptr_personnel_search_view" model="ir.ui.view">
+            <field name="name">facturation_gestion_en_ligne.article.view</field>
+            <field name="model">facturation_gestion_en_ligne.article</field>
+            <field name="arch" type="xml">
+            <search string="Informations sur les articles">
+                <field name="libelleArticle"/>
+                <field name="prixAchat"/>
+                <field name="prixVente"/>
+                <group expand="0" string="Group By">
+                    <filter name="groupby_marque" string="Marque" domain="[]" context="{'group_by':'idmarque'}" help="Grouper par marque"/>
+                    <filter name="groupby_famille_article" string="Famille" domain="[]" context="{'group_by':'idfamille'}" help="Grouper par famille_article"/>
+                    <filter name="groupby_categorie_article" string="Categorie" domain="[]" context="{'group_by':'idcategorie'}" help="Grouper par categorie_article"/>
+                </group>
+            </search>
+            </field>
+            </record>	
+
+
+
+
+
         <record model="ir.ui.view" id="facturation_gestion_en_ligne_article_kanban">
             <field name="name">facturation_gestion_en_ligne.article.kanban</field>
             <field name="model">facturation_gestion_en_ligne.article</field>
@@ -62,9 +87,9 @@
 				   <templates>
                        <t t-name="kanban-box">
                        <div class="oe_gsco_vignette id_div">
-                           <div class="oe_gsco_image" >
+                           <div class="oe_gsco_image">
                               <a type="open">
-                              <img t-att-src="kanban_image('facturation_gestion_en_ligne.article', 'image', record.id.value)" class="oe_gsco_picture"/>
+                              <img height="100" width="100" t-att-src="kanban_image('facturation_gestion_en_ligne.article', 'image', record.id.value)" class="oe_gsco_picture"/>
                               </a>
                            </div>
                            <div class="oe_gsco_details">
@@ -74,16 +99,35 @@
                              </a>
                            </div>
                          </div>
-</t>
-</templates>
+                        </t>
+                    </templates>
 				</kanban>
             </field>
         </record>
+
+		<record model="ir.ui.view" id="facturation_gestion_en_ligne_article_tree">
+            <field name="name">facturation_gestion_en_ligne.article.tree</field>
+            <field name="model">facturation_gestion_en_ligne.article</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Infos categorie_article">
+									<field name="codeArticle"/>
+									<field name="libelleArticle"/>
+									<field name="stock"/>
+									<field name="utilisation"/>
+									<field name="prixAchat"/>
+									<field name="prixVente"/>
+									<field name="typeArticle"/>
+									<field name="tva"/>	
+                </tree>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="action_article_seq">
-            <field name="name">article</field>
+            <field name="name">Article</field>
             <field name="res_model">facturation_gestion_en_ligne.article</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">tree,kanban,form</field>
         </record>
 
    

@@ -83,7 +83,7 @@
             </field>
         </record>
         <record model="ir.actions.act_window" id="action_fournisseur_seq">
-            <field name="name">fournisseur</field>
+            <field name="name">Fournisseur</field>
             <field name="res_model">facturation_gestion_en_ligne.fournisseur</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>

@@ -11,7 +11,7 @@
 						<notebook >
 							<page string="Données générales sur la société">
                                 <group>
-                                	<field name="name"/> 
+                                	<field name="name" onchange="onchange_company(name)"/> 
                                     <field name="logo"/> 
                                     <field name="adresse"/> 
                                     <field name="adresse_complement"/> 

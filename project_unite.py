@@ -9,5 +9,6 @@ class project_unite(osv.osv):
         'libelle': fields.char('Libellé *', size=128, required=True),
         'description': fields.binary('Description', size=64),
         'prix_unitaire': fields.char('Prix Unitaire *', required=True),
+
 			}
 project_unite()

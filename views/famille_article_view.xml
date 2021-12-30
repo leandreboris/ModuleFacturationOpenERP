@@ -13,9 +13,9 @@
 								<group>
 								    <field name="code"/>
 									<field name="libelle"/>
-									<field name="description"/>
-									
+									<field name="description"/>		
 								</group>
+                                <p>Les champ marqués (*) sont obligatoires</p>
 							</page>
 							
 						</notebook>
@@ -29,15 +29,15 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Infos famille_article">
-				<field name="code"/>
-									<field name="libelle"/>
-									<field name="description"/>
+                    <field name="code"/>
+                    <field name="libelle"/>
+                    <field name="description"/>
 									
                 </tree>
             </field>
         </record>
         <record model="ir.actions.act_window" id="action_famille_article_seq">
-            <field name="name">famille_article</field>
+            <field name="name">Famille d'articles</field>
             <field name="res_model">facturation_gestion_en_ligne.famille_article</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>

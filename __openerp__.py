@@ -10,7 +10,7 @@
                     Permet de gérer plusieurs points de commerce et fournit la possibilité de :\n
                     - Gérer facilement les différentes facturations \n
                     - Suivre et gérer efficacement les clients et les différents états des produits.""",
-    'website': 'http://www.woinga.com',
+    'website': 'http://www.wakingo.com',
     'images' : [],
     'depends' : ['base'],
     'data': [
@@ -22,6 +22,7 @@
         'views/facturation_gestion_en_ligne_fournisseur_view.xml',
         'views/categorie_view.xml',
         'views/article_view.xml',
+        'views/facture_view.xml',
      
         ],
     'update_xml': [],

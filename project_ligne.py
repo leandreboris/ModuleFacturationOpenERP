@@ -7,9 +7,9 @@ class project_ligne(osv.osv):
     _columns={
 
         #Informations piece
-        'article': fields.char('Nom *', size=128, required=True),
-        'quantite': fields.binary('Numéro de facture', size=64),
-        'unite': fields.char('Adresse *', required=True),
+        'article' : fields.one2many('facturation_gestion_en_ligne.article', 'libelleArticle', 'Article *', size=128, required=True),
+        'quantite': fields.binary('Quantité', size=64),
+        'unite': fields.integer('Unité *', required=True),
 			}
 
     
